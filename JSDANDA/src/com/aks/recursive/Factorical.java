@@ -10,6 +10,7 @@ public class Factorical {
 		int num = sc.nextInt();
 		System.out.println("Factorial Results is :: " + factorical(num));
 		sc.close();
+		System.out.println("Completed");
 	}
 
 	public static int factorical(int val) {
