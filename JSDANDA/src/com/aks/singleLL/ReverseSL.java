@@ -81,16 +81,33 @@ public class ReverseSL {
 
 		// second way is
 
-		Node prev = null;
-		Node curr = this.head;
-		Node next = null;
-		while (curr != null) {
-			next = curr.next;
-			curr.next = prev;
-			prev = curr;
-			curr = next;
+//		Node prev = null;
+//		Node curr = this.head;
+//		Node next = null;
+//		while (curr != null) {
+//			next = curr.next;
+//			curr.next = prev;
+//			prev = curr;
+//			curr = next;
+//		}
+//		this.head = prev;
+
+		Node rev = reverseByRecurssion(this.head);
+		this.head = rev;
+
+	}
+
+	public Node reverseByRecurssion(Node head) {
+
+		if (head == null || head.next == null) {
+			return head;
 		}
-		this.head = prev;
+
+		Node newHead = reverseByRecurssion(head.next);
+
+		head.next.next = head;
+		head.next = null;
+		return newHead;
 
 	}
 
@@ -124,19 +141,18 @@ public class ReverseSL {
 	public static void main(String[] args) {
 		ReverseSL r = new ReverseSL();
 
-//		r.getAll();
-		r.add(1);
-		r.add(2);
-		r.add(2);
-		r.add(1);
+		r.add(10);
+		r.add(20);
+		r.add(30);
+		r.add(40);
 ////		r.add(50);
-////		r.getAll();
+		r.getAll();
 //		r.getAll();
 //		System.out.println("Length :: " + r.length);
-//		r.reverse();
-//		System.out.println("Reverse");
-//		r.getAll();
+		r.reverse();
+		System.out.println("Reverse");
+		r.getAll();
 
-		System.out.println(r.isPalindrome());
+//		System.out.println(r.isPalindrome());
 	}
 }
