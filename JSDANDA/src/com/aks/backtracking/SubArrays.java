@@ -6,7 +6,7 @@ import java.util.List;
 public class SubArrays {
 
 	public static void main(String[] args) {
-		int[] arr = { 1, 2, 3, 4 };
+		int[] arr = { 1, 2, 3 };
 
 		List<List<Integer>> re = new ArrayList<>();
 		backtracking(arr, re, new ArrayList<>(), 0);
